@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户登录</title> 
+    <link href="/static/common-css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/common-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="/static/common-css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="/static/common-js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="/static/common-css/animate.css" rel="stylesheet">
+    <link href="/static/common-css/style.css" rel="stylesheet">
+	<style>
+		.ibox-content {
+			clear: both;
+			border-radius: 8px;
+			opacity: 0.7;
+			filter: alpha(opacity=50);
+		}
+		.border-bottom{
+			border-left:none;
+			border-right:none;
+			border-top:none;
+			border-bottom:1px solid #0F2543;
+		}
+		.footer{
+			background:none;
+			border:none;
+		}
+	</style>
+</head>
+<body class="gray-bg" >
+<!--<a href="{ReturnBack}" class="Link"></a>-->
+<!--    <div class="middle-box text-center loginscreen animated fadeInDown">-->
+<!--        <div>-->
+<!--          -->
+<!--        </div>-->
+<!--    </div>-->
+<div class="loginColumns animated fadeInDown">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="ibox-content" style="text-align: center">
+<!--				<h3>{WebsiteName}</h3>-->
+				<!--<img src="../../static/image/LoginLogo.png" alt="">-->
+				<div id="div-login" class="hide">
+					<form class="m-t" role="form" action="#" id="defaultForm" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+						<div class="form-group">
+							<input id="mobile" type="usercode" class="form-control border-bottom" name="firstName" placeholder="登录帐号/手机号/邮箱" required data-bv-notempty-message="不能为空" data-bv-stringlength="true" data-bv-stringlength-min="1" data-bv-stringlength-max="30">
+						</div>
+						<div class="form-group">
+							<input id="password" type="password" class="form-control border-bottom" placeholder="用户密码" name="lastName" required data-bv-notempty-message="不能为空">
+						</div>
+						<div class="form-group">
+							<input id="code" type="text" autocomplete="off" class="form-control border-bottom" placeholder="验证码" name="code" required data-bv-notempty-message="不能为空" data-bv-stringlength="true" data-bv-stringlength-min="4" data-bv-stringlength-max="4" style="position: relative">
+							<img id="imgObj" alt="验证码" style="position: absolute;top:-10px;right:0px" onclick="changeImg()"/>
+						</div>
+						<button class="btn btn-sm btn-primary btn-block" id="loginBtn">登录</button>
+					</form>
+				</div>
+				<div id="div-jumping" class="hide">
+					<h5>登录成功,跳转中......</h5>
+					<div class="progress progress-striped active">
+						<div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-danger">
+							<p>请稍候</p>
+						</div>
+					</div>
+<!--					<p>如果长时间未自动跳转,请点击以下链接进行跳转:<a href="{ReturnTo}" class="Link">{ReturnTo}</a></p>-->
+				</div>
+				<div id="div-info" class="hide">
+					<h5><span>{UserName}</span>  您已经登录系统,如果不是您请重新登录.</h5>
+					<button id="logoutBtn" type="button" class="btn btn-danger block full-width m-b">重新登录</button>
+					<button id="backBtn" type="button" class="btn btn-success block full-width m-b">返回</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script>
+//	var isLogin = {IsLogin};
+	var ticket = "{Ticket}";
+	var return_to = "{ReturnTo}";
+</script>
+</body>
+</html>
+
+</script>
